@@ -9,17 +9,16 @@ const assert = require('assert');
 const { PubSub, Observable } = require('..');
 
 const random = () => Math.random() * 1e9 >> 0 || 1;
-
 describe('PubSub', () => {
   let ob = new PubSub();
 
-  it('subscribe -> publish', async () => {
-    let sum = 0;
-    let val = random();
-    ob.subscribe('add', (val) => sum += val);
-    ob.publish('add', val);
-    assert.ok(sum === val);
-  });
+  // it('subscribe -> publish', async () => {
+  //   let sum = 0;
+  //   let val = random();
+  //   ob.subscribe('add', (val) => sum += val);
+  //   ob.publish('add', val);
+  //   assert.ok(sum === val);
+  // });
 
   it('subscribe -> publish -> unsubscribe -> publish', async () => {
     let sum = 0;
